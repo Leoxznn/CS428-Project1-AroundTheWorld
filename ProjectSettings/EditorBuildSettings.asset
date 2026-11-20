@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/RoswellScene.unity
-    guid: 9ed29c3d869964f0fb78b68ddf1dade8
+    path: Assets/Scenes/AroundTheWorld.unity
+    guid: b36a0ecee454d4d458af3b47a737edf6
   m_configObjects: {}

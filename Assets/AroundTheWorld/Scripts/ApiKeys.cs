@@ -2,5 +2,5 @@
 // A new key can take up to ~2 hours to become active after you create it.
 public static class ApiKeys
 {
-    public const string OpenWeather = "";
+    public const string OpenWeather = "8c9574dfaf2d7bbdddbeb4f604378fd8";
 }

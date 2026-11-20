@@ -51,15 +51,17 @@ The builder makes the scene from the Roswell starter scene. You can run it again
 ## Credits
 
 ### Models from the web
+Downloaded from [Poly Pizza](https://poly.pizza) and converted from .glb to .fbx with Blender.
+
 Paris (Merge cube):
-1. *TODO: model name* by *author*, *URL*
-2. *TODO*
-3. *TODO*
+1. Croissant by Poly by Google (CC-BY 3.0): https://poly.pizza/m/8ESbpaPHM5i. It slowly spins next to the tower: French breakfast.
+2. Bicycle by Poly by Google (CC-BY 3.0): https://poly.pizza/m/19VoUuA2pcN. The bikes you see all over the city.
+3. Dove by Poly by Google (CC-BY 3.0): https://poly.pizza/m/2jmH3trzPFf. It flies around the tower like the city's pigeons.
 
 Lisbon (Class cube):
-1. *TODO*
-2. *TODO*
-3. *TODO*
+1. Flying seagull by Poly by Google (CC-BY 3.0): https://poly.pizza/m/6Tpj_vcWP3f. It circles the tower over the Tagus river.
+2. Anchor by Poly by Google (CC-BY 3.0): https://poly.pizza/m/fjAwIosTQHy. A reminder of the ships that left Belém.
+3. Cannon by Kenney (CC0 1.0): https://poly.pizza/m/o452gXvkqD. The tower was a fortress with cannons defending the river.
 
 ### Models I created
 1. Eiffel Tower (`MyModel1_EiffelTower`)
