@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Around the World: AR Knickknacks</title>
+<style>
+  :root { --ink:#1c1f26; --muted:#5b6170; --bg:#fbfaf7; --card:#fff; --line:#e4e1d8; --accent:#1f4e8c; --gold:#b8892e; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.65 Georgia, "Times New Roman", serif; }
+  header { background:linear-gradient(135deg,#0f1b3d,#1f4e8c); color:#fff; padding:56px 16px 40px; }
+  header .wrap { max-width:960px; margin:auto; }
+  header h1 { margin:0 0 8px; font-size:clamp(28px,5vw,44px); }
+  header p { margin:0; opacity:.85; font-family:system-ui, sans-serif; }
+  nav { position:sticky; top:0; background:#fff; border-bottom:1px solid var(--line); font:15px system-ui, sans-serif; z-index:2; }
+  nav .wrap { max-width:960px; margin:auto; padding:10px 16px; display:flex; flex-wrap:wrap; gap:6px 18px; }
+  nav a { color:var(--accent); text-decoration:none; }
+  main { max-width:960px; margin:auto; padding:0 16px 80px; }
+  section { padding:36px 0 8px; border-bottom:1px solid var(--line); }
+  h2 { font-family:system-ui, sans-serif; font-size:24px; color:var(--accent); }
+  h3 { font-family:system-ui, sans-serif; font-size:18px; margin-top:28px; }
+  .video { position:relative; padding-top:56.25%; background:#000; border-radius:8px; overflow:hidden; }
+  .video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+  figure { margin:20px 0; background:var(--card); border:1px solid var(--line); border-radius:8px; padding:10px; }
+  figure img { width:100%; height:auto; display:block; border-radius:4px; background:#ddd; min-height:120px; }
+  figcaption { font:14px/1.5 system-ui, sans-serif; color:var(--muted); padding-top:8px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; }
+  code, pre { font-family:Consolas, Menlo, monospace; font-size:14px; }
+  pre { background:#f1efe9; padding:12px; border-radius:6px; overflow-x:auto; }
+  table { border-collapse:collapse; width:100%; font:15px system-ui, sans-serif; }
+  th, td { border:1px solid var(--line); padding:8px; text-align:left; vertical-align:top; }
+  th { background:#f1efe9; }
+  .todo { background:#fff4d6; border-left:4px solid var(--gold); padding:2px 6px; }
+  a { color:var(--accent); }
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <h1>Around the World: AR Knickknacks</h1>
+  <p>CS 428 Project 1 · Augmented reality souvenirs of the Eiffel Tower (Paris) and the Belém Tower (Lisbon) · <span class="todo">YOUR NAME</span></p>
+</div></header>
+<nav><div class="wrap">
+  <a href="#video">Video</a><a href="#intro">Introduction</a><a href="#build">Download &amp; build</a>
+  <a href="#assets">Models &amp; sounds</a><a href="#why">Why these places</a><a href="#discussion">Discussion</a>
+</div></nav>
+<main>
+
+<section id="video">
+  <h2>Video</h2>
+  <div class="video"><iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Project video" allowfullscreen></iframe></div>
+  <p><span class="todo">Replace VIDEO_ID with your YouTube video id (5 minutes, narrated).</span></p>
+</section>
+
+<section id="intro">
+  <h2>Introduction: what is this?</h2>
+  <p>When you travel, you often bring home a small souvenir, like a snow globe or a tiny tower, to put on your desk. This project imagines a future where everyone wears AR glasses, and asks what those souvenirs could become. Here the souvenir is <em>virtual</em>. A plain paper cube is the physical placeholder, and when you look at it through a phone (or a laptop webcam) it turns into a little 3D model of a famous place. Because it is digital, it can also do more than a real souvenir: it shows the <strong>current weather</strong> and the <strong>local time</strong> at the place it represents.</p>
+  <p>There are two cubes, and both can be used at the same time:</p>
+  <table>
+    <tr><th>Cube</th><th>Place</th><th>What the four sides show</th></tr>
+    <tr><td>Merge Cube</td><td>Eiffel Tower, Paris, France</td><td>Name · weather in °F (updated every 10 min) · local time, 12-hour am/pm · facts about the tower</td></tr>
+    <tr><td>Class Cube</td><td>Belém Tower, Lisbon, Portugal</td><td>Name · weather in °C (updated every 10 min) · local time, 24-hour · facts about the tower</td></tr>
+  </table>
+  <h3>How to use it</h3>
+  <ol>
+    <li>Print, cut and fold the Merge cube and the Class cube.</li>
+    <li>Start the app on an Android phone (or press Play in Unity with a webcam).</li>
+    <li>Point the camera at a cube. The knickknack appears on top, its ambient sound starts, and the sides show the name, weather, time and a fact. Turn the cube in your hand to read each side.</li>
+    <li><strong>Turn the cube upside down, then back up.</strong> The lighting changes. Paris switches from a sunny afternoon to night, with the tower glittering and its beacon sweeping around. Lisbon switches from a bright day to a sunset over the Tagus river, with lit lanterns. Flip it again to go back.</li>
+    <li>Hold both cubes in view to see both places at once.</li>
+  </ol>
+  <div class="grid">
+    <figure><img src="images/phone-both.jpg" alt=""><figcaption><span class="todo">Screenshot: both knickknacks running on the phone at the same time.</span></figcaption></figure>
+    <figure><img src="images/paris-day.jpg" alt=""><figcaption><span class="todo">Paris, day lighting: the name side faces the camera.</span></figcaption></figure>
+    <figure><img src="images/paris-night.jpg" alt=""><figcaption><span class="todo">Paris after flipping the cube: night lighting with the sparkle and the beacon.</span></figcaption></figure>
+    <figure><img src="images/lisbon-day.jpg" alt=""><figcaption><span class="todo">Lisbon, sunny day: the weather side in °C.</span></figcaption></figure>
+    <figure><img src="images/lisbon-sunset.jpg" alt=""><figcaption><span class="todo">Lisbon after flipping: sunset lighting and lanterns.</span></figcaption></figure>
+    <figure><img src="images/time-sides.jpg" alt=""><figcaption><span class="todo">The time sides: 12-hour Paris clock and 24-hour Lisbon clock.</span></figcaption></figure>
+  </div>
+</section>
+
+<section id="build">
+  <h2>Download, build and run</h2>
+  <p>Source code: <a href="https://github.com/USERNAME/REPOSITORY"><span class="todo">https://github.com/USERNAME/REPOSITORY</span></a>. Click <em>Code → Download ZIP</em>, or run <code>git clone</code>.</p>
+  <h3>Software versions</h3>
+  <ul>
+    <li>Unity 2021.3.6f1, with the Android Build Support module (OpenJDK, Android SDK &amp; NDK) and/or iOS Build Support</li>
+    <li>Vuforia Engine 10.9.3</li>
+    <li>TextMesh Pro 3.0.6 (installed automatically)</li>
+    <li>Android 8.0 (API 26) or newer, or any webcam</li>
+  </ul>
+  <h3>Steps</h3>
+  <ol>
+    <li>Install <a href="https://unity.com/download">Unity Hub</a>. Then, from the <a href="https://unity.com/releases/editor/archive">Unity archive</a>, install Unity 2021.3.6f1 (click "Unity Hub" next to that version). Tick <em>Android Build Support</em> and its <em>OpenJDK</em> and <em>Android SDK &amp; NDK Tools</em> sub-items.</li>
+    <li>Download this repository and unzip it.</li>
+    <li>Download Vuforia Engine 10.9.3 for Unity from the <a href="https://developer.vuforia.com/downloads/sdk">Vuforia developer portal</a> (Previous Versions). Copy <code>com.ptc.vuforia.engine-10.9.3.tgz</code> into the project's <code>Packages</code> folder. GitHub cannot store files larger than 100 MB, so it is not in the repository.</li>
+    <li>In Unity Hub: <em>Open → Add project from disk</em>, then select the project folder and open it. Wait for the import to finish.</li>
+    <li>Get a free Vuforia license key: <em>developer.vuforia.com → Plan &amp; Licenses → Generate Basic License</em>. In Unity: <em>Window → Vuforia Configuration → App License Key</em>, then paste it.</li>
+    <li>Get a free <a href="https://home.openweathermap.org/users/sign_up">OpenWeather</a> API key and paste it into <code>Assets/AroundTheWorld/Scripts/ApiKeys.cs</code>.</li>
+    <li>Open the scene <code>Assets/Scenes/AroundTheWorld.unity</code>.</li>
+    <li>Webcam: press <em>Play</em> and show the cubes to the camera.</li>
+    <li>Android: enable Developer Options and USB debugging on the phone, then connect it. Choose <em>File → Build Settings → Android → Switch Platform → Build And Run</em>.</li>
+  </ol>
+</section>
+
+<section id="assets">
+  <h2>Models and sounds</h2>
+  <h3>Paris knickknack (Merge cube)</h3>
+  <p>Models from the web:</p>
+  <ol>
+    <li><span class="todo">Name, author, link</span></li>
+    <li><span class="todo">Name, author, link</span></li>
+    <li><span class="todo">Name, author, link</span></li>
+  </ol>
+  <p>Models I created:</p>
+  <ol>
+    <li>Eiffel Tower: four curved legs with arches, the two platforms, cross-bracing lattice and antenna.</li>
+    <li>Parisian street lamp: a classic green cast-iron lamp with a glowing lantern that lights up at night.</li>
+  </ol>
+  <p>Ambient sound: <span class="todo">source</span></p>
+  <figure><img src="images/paris-models.jpg" alt=""><figcaption><span class="todo">The Paris scene with each model numbered as in the lists above.</span></figcaption></figure>
+
+  <h3>Lisbon knickknack (Class cube)</h3>
+  <p>Models from the web:</p>
+  <ol>
+    <li><span class="todo">Name, author, link</span></li>
+    <li><span class="todo">Name, author, link</span></li>
+    <li><span class="todo">Name, author, link</span></li>
+  </ol>
+  <p>Models I created:</p>
+  <ol>
+    <li>Belém Tower: the bastion with its pointed prow, the domed watchtowers (garitas), merlons with red-cross shields, the main tower with the Renaissance loggia, and the top storey.</li>
+    <li>Portuguese caravel: the ship type of the Age of Discovery, with lateen sails bearing the Cross of the Order of Christ. It gently bobs on the river.</li>
+  </ol>
+  <p>Ambient sound: <span class="todo">source</span></p>
+  <figure><img src="images/lisbon-models.jpg" alt=""><figcaption><span class="todo">The Lisbon scene with each model numbered.</span></figcaption></figure>
+
+  <h3>Other credits</h3>
+  <ul>
+    <li>Starter project and cube images: CS 428, University of Illinois Chicago</li>
+    <li>Weather: OpenWeather. Time: worldtimeapi.org</li>
+  </ul>
+</section>
+
+<section id="why">
+  <h2>Why these places, and how the models represent them</h2>
+  <p><strong>Eiffel Tower.</strong> It is probably the most recognizable monument in the world, and the classic "souvenir tower" you find in every gift shop, so it fits the idea of a knickknack well. The scene sits on the lawn of the Champ de Mars. The street lamp brings in the Paris street atmosphere, and the music-box waltz recalls the souvenir boxes sold around the tower. Night mode copies the tower's hourly sparkle and the rotating beacon on top. <span class="todo">Explain your 3 web models.</span></p>
+  <p><strong>Belém Tower.</strong> It is a 16th-century fortress on the Tagus river in Lisbon, a symbol of Portugal's Age of Discovery. Its base is a stone pier in the river, and the ambient sound is waves on the water. The caravel is the type of ship that left from Belém on the voyages of discovery, and the red cross on its sails is the same one carved on the tower's merlon shields. Sunset mode shows the famous golden light over the river. <span class="todo">Explain your 3 web models and, if you want, why Lisbon matters to you.</span></p>
+</section>
+
+<section id="discussion">
+  <h2>Discussion: will AR knickknacks become popular?</h2>
+  <p class="todo">Draft: rewrite it in your own words before submitting.</p>
+  <p>I think AR knickknacks like these could become popular, though probably not in the form of a printed paper cube. Their success will depend on whether AR eyewear becomes as normal as smartphones. Once people wear glasses that show virtual objects all day, adding a small "living" object to a desk or shelf costs almost nothing. There is no shipping, no dust and no space to find. A single physical anchor can also become many different souvenirs. Today a shelf full of snow globes is clutter. In AR it could be one small cube that becomes Paris on Monday and Lisbon on Tuesday, or shows all of them in a row.</p>
+  <p>The biggest advantage is that these objects can be <em>connected</em>. A normal souvenir is frozen at the moment you bought it, but an AR souvenir can show what is happening at that place right now: the weather, the time, maybe the crowd at the monument or a live sunset. That makes it a small window to a place you care about, not just a memory of it. For someone with family abroad, a knickknack that shows the time and weather in their hometown would be emotional and useful at the same time. It answers "is it too late to call them?" at a glance.</p>
+  <p>There are also good reasons to be skeptical. Part of the charm of a souvenir is that it is a real object: you can hold it, give it to someone, and it reminds you of the trip because you carried it home yourself. A virtual object that anyone can download loses some of that meaning. Ownership and rarity may matter, for example a knickknack you can only unlock by physically visiting the place. There is also a risk of visual clutter: if every surface fills up with animated, talking objects competing for attention, people will turn them off. Good AR objects should be calm and glanceable, like a clock, not like an advertisement. Privacy and battery life are other practical limits, since an object that is always on is always using sensors and data.</p>
+  <p>The objects that would benefit most from being AR-enhanced physical objects are the ones where the physical part gives a sense of place and touch, and the digital part adds information that changes over time. Some examples:</p>
+  <ul>
+    <li><strong>Photo frames and souvenirs</strong> that show live information about the person or place in them.</li>
+    <li><strong>Board games and toys</strong>, where the physical pieces stay tactile but get animations and rules help.</li>
+    <li><strong>Plants and kitchen items</strong> that tell you when to water or what you can cook with what is left.</li>
+    <li><strong>Books, posters and stickers</strong> that come alive, like the laptop stickers in this course.</li>
+    <li><strong>Medicine boxes and appliances</strong> that show instructions or reminders exactly where they are needed.</li>
+  </ul>
+  <p>On the other hand, objects whose whole value is their material, like jewelry, or a handmade gift, probably should stay purely physical, because adding digital layers would not make them more meaningful. Overall I expect AR knickknacks to become a common, low-key part of personalizing your space, the way phone wallpapers and widgets are today. The most successful ones will be small, useful and respectful of attention.</p>
+</section>
+
+</main>
+</body>
+</html>
